@@ -1,3 +1,4 @@
-x=4
-y=5
-print(x+y)
+def testing(i):
+  print(i)
+if __name__ == "__main__":
+ testing(x)
