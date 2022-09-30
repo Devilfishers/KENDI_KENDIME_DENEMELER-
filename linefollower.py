@@ -29,15 +29,15 @@ I= int()
 K= int()
 D= int()
 
-Kp= 0.05
-Ki= 0.0009
-Kd= 2
+Kp= 0.055
+Ki= 0
+Kd= 0
 
-baseA=10
-baseB=10
+baseA=19
+baseB=19
 
-maxA=50
-maxB=50
+maxA=80
+maxB=80
 
 lastError=0
 
@@ -58,7 +58,7 @@ def PID_control(offset):
  global D
  global lastError
 
- error = 345- offset
+ error = 330- offset
  P= error
  I= I + error
  D= error - lastError
