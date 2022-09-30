@@ -29,15 +29,15 @@ I= int()
 K= int()
 D= int()
 
-Kp= 0.055
-Ki= 0
-Kd= 0
+Kp= 0.055 #0.058
+Ki= 0  #0.00000001
+Kd= 0  #0.005-0.008
 
-baseA=19
-baseB=19
+baseA=20
+baseB=20
 
-maxA=80
-maxB=80
+maxA=90
+maxB=90
 
 lastError=0
 
