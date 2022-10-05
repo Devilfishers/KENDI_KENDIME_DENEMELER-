@@ -106,12 +106,12 @@ while True: #since a video is a colletcion of photos an infinite loop is necessa
     #... masked frame. RETR_EXTERNAL parameter is utilized in order to detect the outer lines of an object that is detected and CHAIN_APPROX_SIMPLE parameter is...
     #... utilized in order to to draw the contour according to edge points of a detected object
     
-    if len(contours) > 200: #increasing the accuracy of detection by limiting the detected contour lenght by 200 units
-        c = max(contours, key=cv2.contourArea)
-        M = cv2.moments(c)
+    if len(contours) > 10: #increasing the accuracy of detection by limiting the detected contour lenght by 10 units
+        c = max(contours, key=cv2.contourArea) #detecting the largest contour area that is detected by the camera
+        M = cv2.moments(c)                     #detecting the center point of the detected contour piece 
         if M["m00"] != 0: #since the center point values that are stored in M variable are listed in an array, unless those values are not 0 the "PID_control" funtion...
         #... will be called 
-         cx = int(M['m10'] / M['m00'])
+         cx = int(M['m10'] / M['m00']) #manipulating the 8-bit array values and creating a horizontal center line
          print("CX : " + str(cx)) #printing cx value
 
          PID_control(cx) #calling the "PID_control" function with cx parameter
