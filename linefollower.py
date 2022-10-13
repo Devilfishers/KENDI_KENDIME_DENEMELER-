@@ -2,9 +2,6 @@ import cv2 #importing OpenCV library
 import numpy as np #importing numpy library in order for the OpenCV modules to operate
 import RPi.GPIO as rg #importing a special library that is designed to create an environment communication with Raspberry-Pi pins
 
-
-cap = cv2.VideoCapture("/dev/video0") #calling a function that is used for the recognition of a camera device which is connected to the Raspberry-Pi
-
 rg.setmode(rg.BCM) #Setting the communication mode as "BCM" since there is no physical breadboard connection
 
 rg.setup(18, rg.OUT) #Setting the GPIO18 pin as output 
@@ -27,7 +24,6 @@ rg.setwarnings(False)  #sometimes the system may needs to be shutdown instantly 
 I= int() #declaring an empty intiger variable for INTEGRAL segment
 K= int() #declaring an empty intiger variable for PROPORTIONAL segment
 D= int() #declaring an empty intiger variable for DERIVATIVE segment
-
 
 Kp= 0.055 #0.058                  #declaring a constant value for PROPORTIONAL segment for "tunning" operation
 Ki= 0.00000000001                #declaring a constant value for INTEGRAL segment for "tunning" operation
@@ -89,6 +85,8 @@ def PID_control(offset): #creating a function that allows the robot to move auto
      speedB = 0     #this equationg prevents the overshooting of speedB variable for motorB since motors can not read values that are less than 0
     
  forward(speedA,speedB) #according to the correction of speed values; the "forward" function ,that is nested within the PID function, is called
+
+cap = cv2.VideoCapture("/dev/video0") #calling a function that is used for the recognition of a camera device which is connected to the Raspberry-Pi
 
 while True: #since a video is a colletcion of photos an infinite loop is necessary in order for the camera to repeatidely take some photos and view them as a video
     
