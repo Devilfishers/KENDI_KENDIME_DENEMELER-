@@ -25,9 +25,9 @@ I= int() #declaring an empty intiger variable for INTEGRAL segment
 K= int() #declaring an empty intiger variable for PROPORTIONAL segment
 D= int() #declaring an empty intiger variable for DERIVATIVE segment
 
-Kp= 0.055 #0.058                  #declaring a constant value for PROPORTIONAL segment for "tunning" operation
-Ki= 0.00000000001                #declaring a constant value for INTEGRAL segment for "tunning" operation
-Kd= 0.0055  #0.005-0.008          #declaring a constant value for DERIVATIVE segment for "tunning" operation
+Kp= 0.07 #0.058                  #declaring a constant value for PROPORTIONAL segment for "tunning" operation
+Ki= 0.00008                #declaring a constant value for INTEGRAL segment for "tunning" operation
+Kd= 0.6  #0.005-0.008          #declaring a constant value for DERIVATIVE segment for "tunning" operation
 
 baseA=20  #declaring the base speed value of motorA                         
 baseB=20  #declaring the base speed value of motorA 
