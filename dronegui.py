@@ -31,7 +31,7 @@ while True:
     if cv2.waitKey(1)== ord('q'):
         break
 '''
-'''
+
 def screen_capture():
  global screen,screen_array,cropped_region,corrected_collors,results,model
  model = torch.hub.load('C:\Yolov7_instance_segmentation\yolov5', 'custom',
@@ -56,7 +56,6 @@ def screen_capture():
         break
 # Close down the frame
  cv2.destroyAllWindows()
-'''
 
 def get_vehicle_info(vehicle):
     while True:
@@ -301,8 +300,8 @@ velocity_label.place(x=35, y=700)
 root.after(0, print_to_gui, vehicle, root,  lon_label, alt_label, lat_label, yaw_label, pitch_label,roll_label,battery_label,velocity_label,heading_label)
 
 #root.after(0, map_view,vehicle,root,map_widget)
-#thread = threading.Thread(target=screen_capture)
-#thread.start()
+thread = threading.Thread(target=screen_capture)
+thread.start()
 
 
 root.mainloop()
