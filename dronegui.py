@@ -14,23 +14,8 @@ import torch
 import pyautogui
 import threading
 import argparse
-#model = torch.hub.load('C:\Yolov7_instance_segmentation\yolov5', 'custom',path='C:\Yolov7_instance_segmentation\yolov5\yolov5s.pt', source='local')
-# sct=mss()
 
 
-'''
-while True:
-    bounding_box = {'top': 0, 'left': 0, 'width': 1152, 'height': 864}
-    img = np.array(sct.grab(bounding_box))
-    #scr_img = np.array(sct_img)
-
-    #cv2.imshow('screen', scr_img) # display screen in box
-    results = model(img)
-    cv2.imshow('Testing',np.squeeze(results))
-
-    if cv2.waitKey(1)== ord('q'):
-        break
-'''
 
 def screen_capture():
  global screen,screen_array,cropped_region,corrected_collors,results,model
@@ -206,24 +191,6 @@ label = tk.Label(root, text=" Quadcopter Flight Informations", font=('Courier Ne
 label.pack(padx=20,  pady=20)
 
 
-''''
-# Create a PhotoImage object
-img = Image.open("C:\\Users\\LENOVO\\Desktop\\dd\\goknil.jpg")
-img = ImageTk.PhotoImage(img)
-
-# create a label to display the image
-original_image = Image.open("C:\\Users\\LENOVO\\Desktop\\dd\\goknil.jpg")
-
-# Resize the image
-resized_image = original_image.resize((200, 200), Image.ANTIALIAS)
-
-# Convert the image to a PhotoImage object
-photo = ImageTk.PhotoImage(resized_image)
-'''
-#label = tk.Label(root, image=photo,bd=0)
-#label.place(x=0, y=0)
-
-
 lat_label = tk.Label(root, text="Latitude:")
 lat_label.place(x=0, y=300)
 lat_entry = tk.Entry(root)
@@ -287,11 +254,6 @@ lastheartbeat_label.place(x=35, y=350)
 
 velocity_label = tk.Label(root, text="velocity:", font=('Arial', 16), bg="#2a283b", fg='red')
 velocity_label.place(x=35, y=700)
-
-
-
-
-
 
 
 
