@@ -1,1 +1,1 @@
-# ubuntu_deneme
+# DENEMELER
